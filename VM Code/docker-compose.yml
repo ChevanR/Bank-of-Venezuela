@@ -1,0 +1,33 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: BOV
+      MYSQL_USER: api
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    networks:
+      - my_network
+
+  app:
+    build: .
+    container_name: bankofvenezuela-app
+    environment:
+      DB_HOST: mysql
+      DB_USER: api
+      DB_PASSWORD: password
+      DB_NAME: BOV
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge

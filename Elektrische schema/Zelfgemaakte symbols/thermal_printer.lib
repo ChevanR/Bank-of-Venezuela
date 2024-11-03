@@ -1,0 +1,20 @@
+EESchema-LIBRARY Version 2.3  Date: Ср 27 июн 2024 12:00:00
+#encoding utf-8
+#
+# Thermal-Printer-Module
+#
+DEF Thermal-Printer-Module P 0 40 Y Y 1 F N
+F0 "P" 0 50 60 H V C CNN
+F1 "Thermal-Printer-Module" -50 150 60 H V C CNN
+F2 "~" 0 0 60 H V C CNN
+F3 "~" 0 0 60 H V C CNN
+DRAW
+S -650 300 600 -250 0 1 0 N
+X TX 1 -550 -550 300 U 50 50 1 1 O
+X RX 2 -400 -550 300 U 50 50 1 1 I
+X 230V 3 -250 -550 300 U 50 50 1 1 P
+X GND 4 -100 -550 300 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library
